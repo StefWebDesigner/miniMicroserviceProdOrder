@@ -1,0 +1,22 @@
+server:
+    port: 8081
+spring:
+    application:
+        name: microservice-order-service
+    datasource:
+        url: jdbc:postgresql://localhost:5432/microservices-product
+        username: postgres
+        password: admin
+        driver-class-name: org.postgresql.Driver
+    jpa:
+        hibernate:
+        #      ddl-auto: create-drop
+            ddl-auto: update
+        show-sql: false
+        properties:
+            hibernate:
+                format_sql: true
+        database: postgresql
+        database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+
