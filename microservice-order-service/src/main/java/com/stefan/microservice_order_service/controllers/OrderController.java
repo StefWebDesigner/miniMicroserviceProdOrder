@@ -3,6 +3,7 @@ package com.stefan.microservice_order_service.controllers;
 import com.stefan.microservice_order_service.client.ProductServiceClient;
 import com.stefan.microservice_order_service.entities.Product;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,6 +26,6 @@ public class OrderController {
     @GetMapping("/allProducts")
     public ResponseEntity<List<Product>> fetchAllProducts() {
         List<Product> result = productServiceClient.fetchAllProducts();
-        return new ResponseEntity<>(result, HttpStatus.OK);
+        return new ResponseEntity<>(result, HttpStatusCode.valueOf(200));
     }
 }
